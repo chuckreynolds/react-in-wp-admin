@@ -33,7 +33,7 @@ function getWebpackConfig() {
 
 function doSass() {
 	if ( arguments.length ) {
-		console.log('Sass file ' + arguments[0].path + ' changed.');
+		console.log( 'Sass file ' + arguments[0].path + ' changed.' );
 	}
 	console.log( 'Building CSS bundle' );
 	gulp.src( './css/scss/components.scss' )
