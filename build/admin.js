@@ -19006,6 +19006,16 @@
 	var container = React.createClass({
 		displayName: 'container',
 	
+		getInitialState: function getInitialState() {
+			return {
+				echo: 'Talk to yourself'
+			};
+		},
+		handleChange: function handleChange(e) {
+			this.setState({
+				echo: e.target.value
+			});
+		},
 		render: function render() {
 			return React.createElement(
 				'div',
@@ -19013,13 +19023,9 @@
 				React.createElement(
 					'h1',
 					null,
-					'Title'
+					this.state.echo
 				),
-				React.createElement(
-					'p',
-					null,
-					'this is the paragraph'
-				)
+				React.createElement('input', { type: 'text', value: this.state.echo, onChange: this.handleChange })
 			);
 		}
 	});
